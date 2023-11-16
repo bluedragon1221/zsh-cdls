@@ -1,7 +1,16 @@
 #!/bin/zsh
 chpwd_functions+=(cd_do_ls)
 
-
+# Since it's a function, we can call it normally, or treat it as a chpwd hook
 cd_do_ls() {
-    ls -A1F --color=always --group-directories-first "$@"
+    if [[ $1 ]]; then
+	cd $1
+	clear
+	ls -A1F --color=always --group-directories-first
+    else
+	clear
+	ls -A1F --color=always --group-directories-first
+    fi
 }
+
+
