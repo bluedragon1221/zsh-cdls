@@ -4,7 +4,6 @@ chpwd_functions+=(cd_do_ls)
 # Since it's a function, we can call it normally, or treat it as a chpwd hook
 cd_do_ls() {
     if [[ $1 ]]; then
-	cd $1
 	clear
 	ls -A1F --color=always --group-directories-first
     else
@@ -13,4 +12,5 @@ cd_do_ls() {
     fi
 }
 
-
+alias ls="cd_do_ls"
+alias clear="cd_do_ls"
