@@ -1,5 +1,7 @@
 #!/bin/zsh
+chpwd_functions+=(cd_do_ls)
 
-add-zsh-hook chpwd() {
+
+cd_do_ls() {
     ls -A1F --color=always --group-directories-first "$@"
 }
