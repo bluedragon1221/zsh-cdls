@@ -14,3 +14,6 @@ cd_do_ls() {
 
 alias ls="cd_do_ls"
 alias clear="cd_do_ls"
+
+# start the terminal by clearing
+clear
