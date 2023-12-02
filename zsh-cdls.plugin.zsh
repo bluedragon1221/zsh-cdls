@@ -5,10 +5,13 @@ chpwd_functions+=(cd_do_ls)
 cd_do_ls() {
     if [[ $1 ]]; then
 	clear
-	ls -A1F --color=always --group-directories-first
+	# ls -A1F --color=always --group-directories-first
+	cd $1
+	eza --oneline --icons -FA --group-directories-first --ignore-glob=".git*" "$1"
     else
 	clear
-	ls -A1F --color=always --group-directories-first
+	# ls -A1F --color=always --group-directories-first
+	eza --oneline --icons -FA --group-directories-first --ignore-glob=".git*"
     fi
 }
 
