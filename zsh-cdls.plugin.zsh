@@ -30,3 +30,8 @@ function mv {
   command mv $@
   clear
 }
+
+function mkdir {
+	command mkdir $@
+  clear
+}
