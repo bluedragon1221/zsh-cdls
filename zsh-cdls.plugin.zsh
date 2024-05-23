@@ -1,9 +1,11 @@
 #!/bin/zsh
 chpwd_functions+=(cd_do_ls)
 
+function get_alias { which $1 | sed "s/$1: aliased to //" }
+
 cd_do_ls() {
   clear
-  ls
+  $(get_alias ls)
 }
 
 alias clear="clear; ls"
