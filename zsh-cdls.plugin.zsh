@@ -8,9 +8,6 @@ cd_do_ls() {
 
 alias clear="clear; ls"
 
-# start the terminal by ls
-ls
-
 function rm {
   command rm $@
   clear
